@@ -103,9 +103,6 @@ class whatsAppBot:
                 while(count < spam_count-1):
                     self.type_word(my_spam_message)
                     count += 1
-        
-
-    
     def logout(self):
         time.sleep(my_sleep_time)
         self.driver.find_element_by_xpath("//*[name()='div'][@title='Menu']").click()
@@ -119,8 +116,6 @@ class whatsAppBot:
         pyautogui.hotkey("ctrl","w")
         print("Tab closed.")
     
-    
-#TODO:Birthday wish on time.
 bot = whatsAppBot()
 bot.enter_website() 
 
@@ -130,6 +125,8 @@ bot.spam(spam_choice,spam_target_list,my_spam_message,spam_count)
 #bot.logout()  
 bot.close_tab()  
 
+print("Closing web driver...")
 bot.driver.quit()
+
 print("Driver exited.")
 exit()       
